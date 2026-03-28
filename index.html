@@ -1,0 +1,943 @@
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ग्रामपंचायत अधिकृत संकेतस्थळ - Gram Panchayat Official Website">
+    <title>ग्रामपंचायत चेक आंबेधानोरा | Gram Panchayat Chek Ambedhanora</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@400;500;600;700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+    
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'heading': ['Mukta', 'sans-serif'],
+                        'body': ['Work Sans', 'sans-serif'],
+                    },
+                    colors: {
+                        'primary': {
+                            'base': '#0A3161',
+                            'hover': '#001D4A',
+                            'text': '#FFFFFF'
+                        },
+                        'secondary': {
+                            'base': '#0056B3',
+                            'hover': '#004494'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        /* Base Styles */
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Work Sans', sans-serif;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Mukta', sans-serif;
+        }
+        
+        /* Hero Overlay */
+        .hero-overlay {
+            background: linear-gradient(to bottom, rgba(10, 49, 97, 0.7), rgba(0, 29, 74, 0.8));
+        }
+        
+        /* Active Nav Link */
+        .nav-link-active {
+            color: #0056B3;
+            position: relative;
+        }
+        
+        .nav-link-active::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background-color: #0056B3;
+            border-radius: 1px;
+        }
+        
+        /* Card Hover */
+        .card-hover {
+            transition: transform 300ms ease-in-out, box-shadow 300ms ease-in-out;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 25px -5px rgba(10, 49, 97, 0.1), 0 8px 10px -6px rgba(10, 49, 97, 0.1);
+        }
+        
+        /* Gallery Image Hover */
+        .gallery-image-container {
+            overflow: hidden;
+        }
+        
+        .gallery-image-container img {
+            transition: transform 400ms ease-in-out;
+        }
+        
+        .gallery-image-container:hover img {
+            transform: scale(1.05);
+        }
+        
+        /* Mobile Menu Animation */
+        .mobile-menu-enter {
+            animation: slideDown 300ms ease-out;
+        }
+        
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Focus Styles */
+        button:focus-visible,
+        a:focus-visible {
+            outline: 2px solid #2563EB;
+            outline-offset: 2px;
+        }
+        
+        /* Form Input Focus */
+        input:focus, textarea:focus, select:focus {
+            border-color: #0056B3;
+            outline: none;
+            box-shadow: 0 0 0 2px rgba(0, 86, 179, 0.2);
+        }
+    </style>
+</head>
+<body class="min-h-screen bg-slate-50 text-slate-900">
+    
+    <!-- ==================== NAVBAR ==================== -->
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-xl border-b border-slate-200 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <!-- Logo -->
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-full bg-primary-base flex items-center justify-center">
+                        <i data-lucide="landmark" class="w-5 h-5 text-white"></i>
+                    </div>
+                    <div class="hidden sm:block">
+                        <p class="text-sm font-semibold text-primary-base">ग्रामपंचायत चेक आंबेधानोरा</p>
+                        <p class="text-xs text-slate-500">Gram Panchayat Chek Ambedhanora</p>
+                    </div>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center gap-1">
+                    <a href="#home" class="nav-link px-3 py-2 text-sm font-medium rounded-lg transition-colors duration-200 text-slate-600 hover:text-primary-base hover:bg-slate-50" data-section="home">
+                        <span class="hidden lg:inline">मुख्यपृष्ठ / </span>Home
+                    </a>
+                    <a href="#about" class="nav-link px-3 py-2 text-sm font-medium rounded-lg transition-colors duration-200 text-slate-600 hover:text-primary-base hover:bg-slate-50" data-section="about">
+                        <span class="hidden lg:inline">माहिती / </span>About
+                    </a>
+                    <a href="#members" class="nav-link px-3 py-2 text-sm font-medium rounded-lg transition-colors duration-200 text-slate-600 hover:text-primary-base hover:bg-slate-50" data-section="members">
+                        <span class="hidden lg:inline">सदस्य / </span>Members
+                    </a>
+                    <a href="#gallery" class="nav-link px-3 py-2 text-sm font-medium rounded-lg transition-colors duration-200 text-slate-600 hover:text-primary-base hover:bg-slate-50" data-section="gallery">
+                        <span class="hidden lg:inline">गॅलरी / </span>Gallery
+                    </a>
+                    <a href="#info" class="nav-link px-3 py-2 text-sm font-medium rounded-lg transition-colors duration-200 text-slate-600 hover:text-primary-base hover:bg-slate-50" data-section="info">
+                        <span class="hidden lg:inline">योजना / </span>Schemes
+                    </a>
+                    <a href="#contact-form" class="nav-link px-3 py-2 text-sm font-medium rounded-lg transition-colors duration-200 text-slate-600 hover:text-primary-base hover:bg-slate-50" data-section="contact-form">
+                        <span class="hidden lg:inline">चौकशी / </span>Query
+                    </a>
+                    <a href="#contact" class="nav-link px-3 py-2 text-sm font-medium rounded-lg transition-colors duration-200 text-slate-600 hover:text-primary-base hover:bg-slate-50" data-section="contact">
+                        <span class="hidden lg:inline">संपर्क / </span>Contact
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg hover:bg-slate-100 transition-colors" aria-label="Toggle menu">
+                    <i data-lucide="menu" class="w-6 h-6 menu-icon"></i>
+                    <i data-lucide="x" class="w-6 h-6 close-icon hidden"></i>
+                </button>
+            </div>
+
+            <!-- Mobile Navigation -->
+            <div id="mobile-menu" class="md:hidden hidden py-4 border-t border-slate-100 mobile-menu-enter">
+                <div class="flex flex-col gap-1">
+                    <a href="#home" class="mobile-nav-link flex items-center gap-3 px-4 py-3 text-left rounded-lg transition-colors text-slate-600 hover:bg-slate-50" data-section="home">
+                        <i data-lucide="home" class="w-5 h-5"></i>
+                        <span class="font-medium">मुख्यपृष्ठ / Home</span>
+                    </a>
+                    <a href="#about" class="mobile-nav-link flex items-center gap-3 px-4 py-3 text-left rounded-lg transition-colors text-slate-600 hover:bg-slate-50" data-section="about">
+                        <i data-lucide="info" class="w-5 h-5"></i>
+                        <span class="font-medium">माहिती / About</span>
+                    </a>
+                    <a href="#members" class="mobile-nav-link flex items-center gap-3 px-4 py-3 text-left rounded-lg transition-colors text-slate-600 hover:bg-slate-50" data-section="members">
+                        <i data-lucide="users" class="w-5 h-5"></i>
+                        <span class="font-medium">सदस्य / Members</span>
+                    </a>
+                    <a href="#gallery" class="mobile-nav-link flex items-center gap-3 px-4 py-3 text-left rounded-lg transition-colors text-slate-600 hover:bg-slate-50" data-section="gallery">
+                        <i data-lucide="image" class="w-5 h-5"></i>
+                        <span class="font-medium">गॅलरी / Gallery</span>
+                    </a>
+                    <a href="#info" class="mobile-nav-link flex items-center gap-3 px-4 py-3 text-left rounded-lg transition-colors text-slate-600 hover:bg-slate-50" data-section="info">
+                        <i data-lucide="file-text" class="w-5 h-5"></i>
+                        <span class="font-medium">योजना / Schemes</span>
+                    </a>
+                    <a href="#contact-form" class="mobile-nav-link flex items-center gap-3 px-4 py-3 text-left rounded-lg transition-colors text-slate-600 hover:bg-slate-50" data-section="contact-form">
+                        <i data-lucide="message-square" class="w-5 h-5"></i>
+                        <span class="font-medium">चौकशी / Query</span>
+                    </a>
+                    <a href="#contact" class="mobile-nav-link flex items-center gap-3 px-4 py-3 text-left rounded-lg transition-colors text-slate-600 hover:bg-slate-50" data-section="contact">
+                        <i data-lucide="phone" class="w-5 h-5"></i>
+                        <span class="font-medium">संपर्क / Contact</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-16">
+    
+        <!-- ==================== HERO SECTION ==================== -->
+        <section id="home" class="relative min-h-[85vh] flex items-center justify-center">
+            <!-- Background Image - CUSTOMIZE: Replace with your village image -->
+            <div class="absolute inset-0 bg-cover bg-center bg-no-repeat" style="background-image: url('./assets/gppic_one.jpeg');">
+                <div class="absolute inset-0 hero-overlay"></div>
+            </div>
+
+            <!-- Content -->
+            <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <div class="flex justify-center mb-6">
+                    <div class="w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center border-2 border-white/30">
+                        <i data-lucide="landmark" class="w-10 h-10 sm:w-12 sm:h-12 text-white"></i>
+                    </div>
+                </div>
+                
+                <!-- CUSTOMIZE: Gram Panchayat Name -->
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-4 tracking-tight">
+                    ग्रामपंचायत चेक आंबेधानोरा
+                </h1>
+                <h2 class="text-2xl sm:text-3xl lg:text-4xl font-semibold text-white/90 mb-6">
+                    Grampanchayat Chek Ambedhanora 
+                </h2>
+                
+                <!-- CUSTOMIZE: Village & District -->
+                <div class="flex items-center justify-center gap-2 text-white/80 mb-4">
+                    <i data-lucide="map-pin" class="w-5 h-5"></i>
+                    <p class="text-lg sm:text-xl">
+                        पंचायत समिति पोंभुर्णा , जिल्हा चंद्रपूर  | Panchayat Samiti Pombhurna, District Chandrapur    
+                    </p>
+                </div>
+
+                <!-- CUSTOMIZE: Tagline -->
+                <p class="text-lg sm:text-xl text-white/70 italic">
+                    "स्वच्छ गाव, समृद्ध गाव" | "Clean Village, Prosperous Village"
+                </p>
+
+                <div class="mt-10">
+                    <a href="#about" class="inline-flex items-center justify-center bg-white text-primary-base hover:bg-white/90 px-8 py-4 text-lg font-semibold rounded-lg shadow-lg transition-colors">
+                        अधिक जाणून घ्या / Learn More
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== ABOUT SECTION ==================== -->
+        <section id="about" class="py-16 md:py-24 lg:py-32 bg-slate-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12 md:mb-16">
+                    <p class="text-sm uppercase tracking-wider font-semibold text-secondary-base mb-2">माहिती / About</p>
+                    <h2 class="text-2xl sm:text-3xl lg:text-4xl font-semibold text-slate-900 tracking-tight">
+                        गावाची ओळख | Village Overview
+                    </h2>
+                </div>
+
+                <!-- CUSTOMIZE: Update statistics below -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- Population Card -->
+                    <div class="bg-white border border-slate-200 rounded-xl shadow-sm card-hover p-6 md:p-8 text-center">
+                        <div class="w-14 h-14 rounded-full bg-blue-50 text-blue-600 flex items-center justify-center mx-auto mb-4">
+                            <i data-lucide="users" class="w-7 h-7"></i>
+                        </div>
+                        <p class="text-3xl sm:text-4xl font-bold text-primary-base mb-2">1142</p>
+                        <p class="text-base text-slate-600 font-medium">लोकसंख्या / Population</p>
+                    </div>
+
+                    <!-- Area Card -->
+                    <div class="bg-white border border-slate-200 rounded-xl shadow-sm card-hover p-6 md:p-8 text-center">
+                        <div class="w-14 h-14 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center mx-auto mb-4">
+                            <i data-lucide="map-pin" class="w-7 h-7"></i>
+                        </div>
+                        <p class="text-3xl sm:text-4xl font-bold text-primary-base mb-2">6.38 km²</p>
+                        <p class="text-base text-slate-600 font-medium">क्षेत्रफळ / Area</p>
+                    </div>
+
+                    <!-- Households Card -->
+                    <div class="bg-white border border-slate-200 rounded-xl shadow-sm card-hover p-6 md:p-8 text-center">
+                        <div class="w-14 h-14 rounded-full bg-amber-50 text-amber-600 flex items-center justify-center mx-auto mb-4">
+                            <i data-lucide="home" class="w-7 h-7"></i>
+                        </div>
+                        <p class="text-3xl sm:text-4xl font-bold text-primary-base mb-2">298</p>
+                        <p class="text-base text-slate-600 font-medium">कुटुंबे / Households</p>
+                    </div>
+
+                    <!-- Contact Card -->
+                    <div class="bg-white border border-slate-200 rounded-xl shadow-sm card-hover p-6 md:p-8 text-center">
+                        <div class="w-14 h-14 rounded-full bg-purple-50 text-purple-600 flex items-center justify-center mx-auto mb-4">
+                            <i data-lucide="phone" class="w-7 h-7"></i>
+                        </div>
+                        <p class="text-3xl sm:text-4xl font-bold text-primary-base mb-2">9763076399</p>
+                        <p class="text-base text-slate-600 font-medium">संपर्क / Contact</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== MEMBERS SECTION ==================== -->
+        <section id="members" class="py-16 md:py-24 lg:py-32 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12 md:mb-16">
+                    <p class="text-sm uppercase tracking-wider font-semibold text-secondary-base mb-2">सदस्य / Members</p>
+                    <h2 class="text-2xl sm:text-3xl lg:text-4xl font-semibold text-slate-900 tracking-tight">
+                        ग्रामपंचायत सदस्य | Panchayat Members
+                    </h2>
+                </div>
+
+                <!-- CUSTOMIZE: Update member names, roles and images -->
+                <div class="flex flex-wrap justify-center gap-6">
+                    <!-- Prashasak -->
+                    <div class="w-full sm:w-[calc(50%-0.75rem)] lg:w-[calc(25%-1.125rem)] bg-white border border-slate-200 rounded-xl shadow-sm overflow-hidden card-hover flex-shrink-0 flex-grow-0">
+                        <div class="aspect-square bg-slate-100 overflow-hidden">
+                            <img src="./assets/prashasak.jpg" alt="Sarpanch" class="w-full h-full object-cover" loading="lazy">
+                        </div>
+                        <div class="p-4 text-center">
+                            <h3 class="text-lg font-semibold text-slate-900 mb-1">सौ निरंजना विकास मडावी</h3>
+                            <p class="text-sm text-slate-500 mb-2">Sau Niranjana Vikas Madavi</p>
+                            <span class="inline-block bg-secondary-base text-white text-xs px-3 py-1 rounded-full font-medium">प्रशासाक  / Administrator</span>
+                        </div>
+                    </div>
+
+                    <!-- Deputy Sarpanch -->
+                    <div class="w-full sm:w-[calc(50%-0.75rem)] lg:w-[calc(25%-1.125rem)] bg-white border border-slate-200 rounded-xl shadow-sm overflow-hidden card-hover flex-shrink-0 flex-grow-0">
+                        <div class="aspect-square bg-slate-100 overflow-hidden">
+                            <img src="./assets/gpo.jpg" alt="Deputy Sarpanch" class="w-full h-full object-cover" loading="lazy">
+                        </div>
+                        <div class="p-4 text-center">
+                            <h3 class="text-lg font-semibold text-slate-900 mb-1">श्री राजेश तुरे </h3>
+                            <p class="text-sm text-slate-500 mb-2">Shree Rajesh Ture</p>
+                            <span class="inline-block bg-secondary-base text-white text-xs px-3 py-1 rounded-full font-medium">ग्रामपंचायत अधिकारी / Grampanchayat Officer
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- Member 1 >
+                    <div class="w-full sm:w-[calc(50%-0.75rem)] lg:w-[calc(25%-1.125rem)] bg-white border border-slate-200 rounded-xl shadow-sm overflow-hidden card-hover flex-shrink-0 flex-grow-0">
+                        <div class="aspect-square bg-slate-100 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1609252285236-93406ce15b0d?w=300" alt="Member" class="w-full h-full object-cover" loading="lazy">
+                        </div>
+                        <div class="p-4 text-center">
+                            <h3 class="text-lg font-semibold text-slate-900 mb-1">श्री. विकास जाधव</h3>
+                            <p class="text-sm text-slate-500 mb-2">Shri. Vikas Jadhav</p>
+                            <span class="inline-block bg-slate-100 text-slate-700 text-xs px-3 py-1 rounded-full font-medium">सदस्य / Member</span>
+                        </div>
+                    </div>
+
+                    <!-- Member 2 >
+                    <div class="w-full sm:w-[calc(50%-0.75rem)] lg:w-[calc(25%-1.125rem)] bg-white border border-slate-200 rounded-xl shadow-sm overflow-hidden card-hover flex-shrink-0 flex-grow-0">
+                        <div class="aspect-square bg-slate-100 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1609252285236-93406ce15b0d?w=300" alt="Member" class="w-full h-full object-cover" loading="lazy">
+                        </div>
+                        <div class="p-4 text-center">
+                            <h3 class="text-lg font-semibold text-slate-900 mb-1">श्रीमती. मंगला शिंदे</h3>
+                            <p class="text-sm text-slate-500 mb-2">Smt. Mangala Shinde</p>
+                            <span class="inline-block bg-slate-100 text-slate-700 text-xs px-3 py-1 rounded-full font-medium">सदस्य / Member</span>
+                        </div>
+                    </div>
+
+                    <!-- Member 3 >
+                    <div class="w-full sm:w-[calc(50%-0.75rem)] lg:w-[calc(25%-1.125rem)] bg-white border border-slate-200 rounded-xl shadow-sm overflow-hidden card-hover flex-shrink-0 flex-grow-0">
+                        <div class="aspect-square bg-slate-100 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1609252285236-93406ce15b0d?w=300" alt="Member" class="w-full h-full object-cover" loading="lazy">
+                        </div>
+                        <div class="p-4 text-center">
+                            <h3 class="text-lg font-semibold text-slate-900 mb-1">श्री. अमोल गायकवाड</h3>
+                            <p class="text-sm text-slate-500 mb-2">Shri. Amol Gaikwad</p>
+                            <span class="inline-block bg-slate-100 text-slate-700 text-xs px-3 py-1 rounded-full font-medium">सदस्य / Member</span>
+                        </div>
+                    </div>
+
+                    <!-- Member 4 >
+                    <div class="w-full sm:w-[calc(50%-0.75rem)] lg:w-[calc(25%-1.125rem)] bg-white border border-slate-200 rounded-xl shadow-sm overflow-hidden card-hover flex-shrink-0 flex-grow-0">
+                        <div class="aspect-square bg-slate-100 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1609252285236-93406ce15b0d?w=300" alt="Member" class="w-full h-full object-cover" loading="lazy">
+                        </div>
+                        <div class="p-4 text-center">
+                            <h3 class="text-lg font-semibold text-slate-900 mb-1">श्रीमती. प्रिया कुलकर्णी</h3>
+                            <p class="text-sm text-slate-500 mb-2">Smt. Priya Kulkarni</p>
+                            <span class="inline-block bg-slate-100 text-slate-700 text-xs px-3 py-1 rounded-full font-medium">सदस्य / Member</span>
+                        </div>
+                    </div>
+
+                    <!-- Member 5 >
+                    <div class="w-full sm:w-[calc(50%-0.75rem)] lg:w-[calc(25%-1.125rem)] bg-white border border-slate-200 rounded-xl shadow-sm overflow-hidden card-hover flex-shrink-0 flex-grow-0">
+                        <div class="aspect-square bg-slate-100 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1609252285236-93406ce15b0d?w=300" alt="Member" class="w-full h-full object-cover" loading="lazy">
+                        </div>
+                        <div class="p-4 text-center">
+                            <h3 class="text-lg font-semibold text-slate-900 mb-1">श्री. संजय मोरे</h3>
+                            <p class="text-sm text-slate-500 mb-2">Shri. Sanjay More</p>
+                            <span class="inline-block bg-slate-100 text-slate-700 text-xs px-3 py-1 rounded-full font-medium">सदस्य / Member</span>
+                        </div>
+                    </div>
+
+                    <!-- Member 6 >
+                    <div class="w-full sm:w-[calc(50%-0.75rem)] lg:w-[calc(25%-1.125rem)] bg-white border border-slate-200 rounded-xl shadow-sm overflow-hidden card-hover flex-shrink-0 flex-grow-0">
+                        <div class="aspect-square bg-slate-100 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1609252285236-93406ce15b0d?w=300" alt="Member" class="w-full h-full object-cover" loading="lazy">
+                        </div>
+                        <div class="p-4 text-center">
+                            <h3 class="text-lg font-semibold text-slate-900 mb-1">श्रीमती. रेखा पवार</h3>
+                            <p class="text-sm text-slate-500 mb-2">Smt. Rekha Pawar</p>
+                            <span class="inline-block bg-slate-100 text-slate-700 text-xs px-3 py-1 rounded-full font-medium">सदस्य / Member</span>
+                        </div>
+                    </div -->
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== GALLERY SECTION ==================== -->
+        <section id="gallery" class="py-16 md:py-24 lg:py-32 bg-slate-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12 md:mb-16">
+                    <p class="text-sm uppercase tracking-wider font-semibold text-secondary-base mb-2">गॅलरी / Gallery</p>
+                    <h2 class="text-2xl sm:text-3xl lg:text-4xl font-semibold text-slate-900 tracking-tight">
+                        गावाची छायाचित्रे | Village Photos
+                    </h2>
+                </div>
+
+                <!-- CUSTOMIZE: Replace with your village images -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                    <div class="gallery-image-container relative rounded-xl overflow-hidden group aspect-[4/3]">
+                        <img src="./assets/gppic_three.jpeg" alt="Village View" class="w-full h-full object-cover" loading="lazy">
+                        <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent p-4">
+                            <p class="text-white text-sm font-medium"> ग्रामपंचायत चेक आंबेधानोरा / Grampanchayat Chek Ambedhanora</p>
+                        </div>
+                    </div>
+
+                    <div class="gallery-image-container relative rounded-xl overflow-hidden group aspect-[4/3]">
+                        <img src="./assets/gym.jpeg" alt="Agricultural Work" class="w-full h-full object-cover" loading="lazy">
+                        <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent p-4">
+                            <p class="text-white text-sm font-medium">व्यायाम शाळा  / Gym</p>
+                        </div>
+                    </div>
+
+                    <div class="gallery-image-container relative rounded-xl overflow-hidden group aspect-[4/3]">
+                        <img src="./assets/library_ceo_sir.jpeg" alt="Rural Life" class="w-full h-full object-cover" loading="lazy">
+                        <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent p-4">
+                            <p class="text-white text-sm font-medium">अभ्यासिका / Library </p>
+                        </div>
+                    </div>
+
+                    <div class="gallery-image-container relative rounded-xl overflow-hidden group aspect-[4/3]">
+                        <img src="./assets/meeting.jpeg" alt="Villagers" class="w-full h-full object-cover" loading="lazy">
+                        <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent p-4">
+                            <p class="text-white text-sm font-medium">सभा  / Meeting</p>
+                        </div>
+                    </div>
+                    <div class="gallery-image-container relative rounded-xl overflow-hidden group aspect-[4/3]">
+                        <img src="./assets/smashan_bhumi.jpeg" alt="Villagers" class="w-full h-full object-cover" loading="lazy">
+                        <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent p-4">
+                            <p class="text-white text-sm font-medium">स्मशानभूमी  / Smashanbhumi</p>
+                        </div>
+                    </div>
+                    <div class="gallery-image-container relative rounded-xl overflow-hidden group aspect-[4/3]">
+                        <img src="./assets/trashsollection.jpeg" alt="Villagers" class="w-full h-full object-cover" loading="lazy">
+                        <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent p-4">
+                            <p class="text-white text-sm font-medium">स्वच्छता अभियान   / Swachata Abhiyan</p>
+                        </div>
+                    </div>
+                    <div class="gallery-image-container relative rounded-xl overflow-hidden group aspect-[4/3]">
+                        <img src="./assets/zaki_mauli.jpeg" alt="Villagers" class="w-full h-full object-cover" loading="lazy">
+                        <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent p-4">
+                            <p class="text-white text-sm font-medium">माउली झाकी</p>
+                        </div>
+                    </div>
+                    <div class="gallery-image-container relative rounded-xl overflow-hidden group aspect-[4/3]">
+                        <img src="./assets/wakulkar_sir.jpeg" alt="Villagers" class="w-full h-full object-cover" loading="lazy">
+                        <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent p-4">
+                            <p class="text-white text-sm font-medium">वरिष्ठ अधिकारी भेट</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== INFO/SCHEMES SECTION ==================== -->
+        <section id="info" class="py-16 md:py-24 lg:py-32 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12 md:mb-16">
+                    <p class="text-sm uppercase tracking-wider font-semibold text-secondary-base mb-2">योजना / Schemes</p>
+                    <h2 class="text-2xl sm:text-3xl lg:text-4xl font-semibold text-slate-900 tracking-tight">
+                        सरकारी योजना व सूचना | Government Schemes & Notices
+                    </h2>
+                </div>
+
+                <!-- CUSTOMIZE: Update schemes/notices -->
+                <div class="max-w-3xl mx-auto space-y-4">
+                    <!-- Scheme 1 - New -->
+                    <div class="bg-white border border-slate-200 rounded-xl shadow-sm card-hover p-5 md:p-6">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="file-text" class="w-6 h-6 text-secondary-base"></i>
+                            </div>
+                            <div class="flex-1 min-w-0">
+                                <div class="flex items-center gap-2 mb-1 flex-wrap">
+                                    <h3 class="text-lg font-semibold text-slate-900">प्रधानमंत्री आवास योजना</h3>
+                                    <span class="bg-secondary-base text-white text-xs px-2 py-0.5 rounded-full">नवीन / New</span>
+                                </div>
+                                <p class="text-sm text-slate-500 mb-1">Pradhan Mantri Awas Yojana</p>
+                                <p class="text-base text-slate-600">घरकुल योजनेसाठी अर्ज करा | Apply for housing scheme</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Scheme 2 - New -->
+                    <div class="bg-white border border-slate-200 rounded-xl shadow-sm card-hover p-5 md:p-6">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="file-text" class="w-6 h-6 text-secondary-base"></i>
+                            </div>
+                            <div class="flex-1 min-w-0">
+                                <div class="flex items-center gap-2 mb-1 flex-wrap">
+                                    <h3 class="text-lg font-semibold text-slate-900">स्वच्छ भारत मिशन</h3>
+                                    <span class="bg-secondary-base text-white text-xs px-2 py-0.5 rounded-full">नवीन / New</span>
+                                </div>
+                                <p class="text-sm text-slate-500 mb-1">Swachh Bharat Mission</p>
+                                <p class="text-base text-slate-600">शौचालय बांधकाम अनुदान | Toilet construction subsidy</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Scheme 3 -->
+                    <div class="bg-white border border-slate-200 rounded-xl shadow-sm card-hover p-5 md:p-6">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="file-text" class="w-6 h-6 text-secondary-base"></i>
+                            </div>
+                            <div class="flex-1 min-w-0">
+                                <h3 class="text-lg font-semibold text-slate-900 mb-1">कृषी सिंचन योजना</h3>
+                                <p class="text-sm text-slate-500 mb-1">Krishi Sinchan Yojana</p>
+                                <p class="text-base text-slate-600">सूक्ष्म सिंचन सुविधा | Micro irrigation facility</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Scheme 4 -->
+                    <div class="bg-white border border-slate-200 rounded-xl shadow-sm card-hover p-5 md:p-6">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="file-text" class="w-6 h-6 text-secondary-base"></i>
+                            </div>
+                            <div class="flex-1 min-w-0">
+                                <h3 class="text-lg font-semibold text-slate-900 mb-1">महात्मा गांधी रोजगार हमी</h3>
+                                <p class="text-sm text-slate-500 mb-1">MGNREGA</p>
+                                <p class="text-base text-slate-600">रोजगार नोंदणी सुरू | Employment registration open</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== CONTACT FORM SECTION ==================== -->
+        <section id="contact-form" class="py-16 md:py-24 lg:py-32 bg-slate-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12 md:mb-16">
+                    <p class="text-sm uppercase tracking-wider font-semibold text-secondary-base mb-2">संपर्क करा / Contact Us</p>
+                    <h2 class="text-2xl sm:text-3xl lg:text-4xl font-semibold text-slate-900 tracking-tight">
+                        तुमची चौकशी पाठवा | Submit Your Query
+                    </h2>
+                    <p class="mt-4 text-base md:text-lg text-slate-600 max-w-2xl mx-auto">
+                        ग्रामपंचायतशी संपर्क साधण्यासाठी खालील फॉर्म भरा | Fill the form below to contact the Gram Panchayat
+                    </p>
+                </div>
+
+                <div class="max-w-2xl mx-auto">
+                    <div class="bg-white border border-slate-200 rounded-xl shadow-lg p-6 md:p-8">
+                        <!-- Success Message (Hidden by default) -->
+                        <div id="form-success" class="hidden text-center py-8">
+                            <div class="w-16 h-16 rounded-full bg-emerald-100 flex items-center justify-center mx-auto mb-4">
+                                <i data-lucide="check-circle" class="w-8 h-8 text-emerald-600"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold text-slate-900 mb-2">धन्यवाद! / Thank You!</h3>
+                            <p class="text-slate-600 mb-6">
+                                तुमची चौकशी यशस्वीरित्या प्राप्त झाली. आम्ही लवकरच संपर्क साधू.<br>
+                                Your query has been submitted successfully. We will contact you soon.
+                            </p>
+                            <button onclick="resetForm()" class="inline-flex items-center justify-center bg-primary-base hover:bg-primary-hover text-white px-6 py-3 rounded-lg font-semibold transition-colors">
+                                नवीन चौकशी पाठवा / Submit Another Query
+                            </button>
+                        </div>
+
+                        <!-- Contact Form -->
+                        <form id="contact-form-element" class="space-y-6">
+                            <!-- Error Message -->
+                            <div id="form-error" class="hidden flex items-center gap-3 p-4 bg-red-50 border border-red-200 rounded-lg">
+                                <i data-lucide="alert-circle" class="w-5 h-5 text-red-600 flex-shrink-0"></i>
+                                <p id="error-text" class="text-sm text-red-600"></p>
+                            </div>
+
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <!-- Name -->
+                                <div class="space-y-2">
+                                    <label for="name" class="block text-sm font-medium text-slate-700">
+                                        नाव / Name <span class="text-red-500">*</span>
+                                    </label>
+                                    <input type="text" id="name" name="name" required
+                                        placeholder="तुमचे पूर्ण नाव / Your full name"
+                                        class="w-full px-4 py-3 border border-slate-300 rounded-lg text-base transition-colors">
+                                </div>
+
+                                <!-- Phone -->
+                                <div class="space-y-2">
+                                    <label for="phone" class="block text-sm font-medium text-slate-700">
+                                        फोन नंबर / Phone <span class="text-red-500">*</span>
+                                    </label>
+                                    <input type="tel" id="phone" name="phone" required
+                                        placeholder="10 अंकी नंबर / 10-digit number"
+                                        class="w-full px-4 py-3 border border-slate-300 rounded-lg text-base transition-colors">
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <!-- Email -->
+                                <div class="space-y-2">
+                                    <label for="email" class="block text-sm font-medium text-slate-700">
+                                        ईमेल / Email <span class="text-slate-400">(ऐच्छिक / Optional)</span>
+                                    </label>
+                                    <input type="email" id="email" name="email"
+                                        placeholder="example@email.com"
+                                        class="w-full px-4 py-3 border border-slate-300 rounded-lg text-base transition-colors">
+                                </div>
+
+                                <!-- Query Type -->
+                                <div class="space-y-2">
+                                    <label for="query_type" class="block text-sm font-medium text-slate-700">
+                                        चौकशीचा प्रकार / Query Type
+                                    </label>
+                                    <select id="query_type" name="query_type"
+                                        class="w-full px-4 py-3 border border-slate-300 rounded-lg text-base transition-colors bg-white">
+                                        <option value="general">सामान्य चौकशी / General Inquiry</option>
+                                        <option value="scheme">योजना माहिती / Scheme Information</option>
+                                        <option value="complaint">तक्रार / Complaint</option>
+                                        <option value="suggestion">सूचना / Suggestion</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- Subject -->
+                            <div class="space-y-2">
+                                <label for="subject" class="block text-sm font-medium text-slate-700">
+                                    विषय / Subject <span class="text-red-500">*</span>
+                                </label>
+                                <input type="text" id="subject" name="subject" required
+                                    placeholder="चौकशीचा विषय / Subject of your query"
+                                    class="w-full px-4 py-3 border border-slate-300 rounded-lg text-base transition-colors">
+                            </div>
+
+                            <!-- Message -->
+                            <div class="space-y-2">
+                                <label for="message" class="block text-sm font-medium text-slate-700">
+                                    संदेश / Message <span class="text-red-500">*</span>
+                                </label>
+                                <textarea id="message" name="message" rows="5" required
+                                    placeholder="तुमची चौकशी तपशीलवार लिहा / Write your query in detail"
+                                    class="w-full px-4 py-3 border border-slate-300 rounded-lg text-base transition-colors resize-none"></textarea>
+                            </div>
+
+                            <!-- Submit Button -->
+                            <button type="submit" id="submit-btn"
+                                class="w-full flex items-center justify-center gap-2 bg-primary-base hover:bg-primary-hover text-white py-4 px-6 rounded-lg text-lg font-semibold transition-colors">
+                                <i data-lucide="send" class="w-5 h-5"></i>
+                                <span>चौकशी पाठवा / Submit Query</span>
+                            </button>
+
+                            <p class="text-xs text-slate-500 text-center">
+                                <span class="text-red-500">*</span> आवश्यक माहिती / Required fields
+                            </p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer id="contact" class="bg-primary-base text-white py-16 md:py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-8">
+                <!-- Village Name -->
+                <div>
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center">
+                            <i data-lucide="landmark" class="w-6 h-6 text-white"></i>
+                        </div>
+                        <div>
+                            <!-- CUSTOMIZE: Gram Panchayat Name -->
+                            <h3 class="text-xl font-bold">ग्रामपंचायत आंबेधानोरा</h3>
+                            <p class="text-white/70 text-sm">Gram Panchayat Ambedhanora</p>
+                        </div>
+                    </div>
+                    <p class="text-white/60 text-sm italic">"स्वच्छ गाव, समृद्ध गाव"</p>
+                </div>
+
+                <!-- Address -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-4 flex items-center gap-2">
+                        <i data-lucide="building-2" class="w-5 h-5"></i>
+                        पत्ता / Address
+                    </h4>
+                    <!-- CUSTOMIZE: Address -->
+                    <p class="text-white/80 text-sm leading-relaxed mb-2">ग्रामपंचायत कार्यालय, चेक आंबेधानोरा, ता. पोंभुर्णा, जि. चंद्रपूर - 442905</p>
+                    <p class="text-white/60 text-sm leading-relaxed">Gram Panchayat Office, Chek Ambedhanora, Tal. Pombhurna, Dist. Chandrapur - 442905</p>
+                </div>
+
+                <!-- Contact -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">संपर्क / Contact</h4>
+                    <div class="space-y-3">
+                        <!-- CUSTOMIZE: Phone -->
+                        <a href="tel:02135-123456" class="flex items-center gap-3 text-white/80 hover:text-white transition-colors">
+                            <i data-lucide="phone" class="w-5 h-5"></i>
+                            <span>9769076399</span>
+                        </a>
+                        <!-- CUSTOMIZE: Email -->
+                        <a href="mailto:grampanchayat.sundarwadi@gov.in" class="flex items-center gap-3 text-white/80 hover:text-white transition-colors">
+                            <i data-lucide="mail" class="w-5 h-5"></i>
+                            <span class="break-all">chakambedhanora@gmail.com</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Copyright -->
+            <div class="mt-12 pt-8 border-t border-white/10 text-center">
+                <p class="text-white/50 text-sm">
+                    © <span id="year"></span> Gram Panchayat Chek Ambedhanora. सर्व हक्क राखीव / All Rights Reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ==================== JAVASCRIPT ==================== -->
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Set current year in footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.querySelector('.menu-icon');
+        const closeIcon = document.querySelector('.close-icon');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            menuIcon.classList.toggle('hidden');
+            closeIcon.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.mobile-nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                menuIcon.classList.remove('hidden');
+                closeIcon.classList.add('hidden');
+            });
+        });
+
+        // Scrollspy - Highlight active section in navbar
+        const sections = document.querySelectorAll('section[id], footer[id]');
+        const navLinks = document.querySelectorAll('.nav-link');
+        const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+
+        function updateActiveSection() {
+            let current = '';
+            const navHeight = 80;
+
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - navHeight - 100;
+                const sectionBottom = sectionTop + section.offsetHeight;
+                
+                if (window.scrollY >= sectionTop && window.scrollY < sectionBottom) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            // Update desktop nav links
+            navLinks.forEach(link => {
+                link.classList.remove('nav-link-active', 'text-secondary-base', 'bg-blue-50');
+                link.classList.add('text-slate-600');
+                
+                if (link.getAttribute('data-section') === current) {
+                    link.classList.add('nav-link-active', 'text-secondary-base', 'bg-blue-50');
+                    link.classList.remove('text-slate-600');
+                }
+            });
+
+            // Update mobile nav links
+            mobileNavLinks.forEach(link => {
+                link.classList.remove('text-secondary-base', 'bg-blue-50');
+                link.classList.add('text-slate-600');
+                
+                if (link.getAttribute('data-section') === current) {
+                    link.classList.add('text-secondary-base', 'bg-blue-50');
+                    link.classList.remove('text-slate-600');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', updateActiveSection);
+        window.addEventListener('load', updateActiveSection);
+
+        // Contact Form Handling
+        const contactForm = document.getElementById('contact-form-element');
+        const formSuccess = document.getElementById('form-success');
+        const formError = document.getElementById('form-error');
+        const errorText = document.getElementById('error-text');
+        const submitBtn = document.getElementById('submit-btn');
+
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('name').value.trim();
+            const phone = document.getElementById('phone').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const queryType = document.getElementById('query_type').value;
+            const subject = document.getElementById('subject').value.trim();
+            const message = document.getElementById('message').value.trim();
+
+            // Validation
+            if (!name) {
+                showError('कृपया नाव प्रविष्ट करा / Please enter your name');
+                return;
+            }
+            if (!phone) {
+                showError('कृपया फोन नंबर प्रविष्ट करा / Please enter phone number');
+                return;
+            }
+            if (!/^[0-9]{10}$/.test(phone.replace(/\s/g, ''))) {
+                showError('कृपया वैध 10 अंकी फोन नंबर प्रविष्ट करा / Please enter valid 10-digit phone number');
+                return;
+            }
+            if (!subject) {
+                showError('कृपया विषय प्रविष्ट करा / Please enter subject');
+                return;
+            }
+            if (!message) {
+                showError('कृपया संदेश प्रविष्ट करा / Please enter your message');
+                return;
+            }
+
+            // Hide error if visible
+            formError.classList.add('hidden');
+
+            // Show loading state
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = `
+                <svg class="animate-spin w-5 h-5" fill="none" viewBox="0 0 24 24">
+                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                </svg>
+                <span>पाठवत आहे... / Submitting...</span>
+            `;
+
+            // Simulate form submission (replace with actual API call)
+            // For static template, just show success after delay
+            setTimeout(() => {
+                // Show success message
+                contactForm.classList.add('hidden');
+                formSuccess.classList.remove('hidden');
+                
+                // Reset button
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = `
+                    <i data-lucide="send" class="w-5 h-5"></i>
+                    <span>चौकशी पाठवा / Submit Query</span>
+                `;
+                lucide.createIcons();
+            }, 1500);
+
+            /* 
+            // UNCOMMENT THIS FOR ACTUAL API INTEGRATION:
+            fetch('YOUR_API_ENDPOINT/api/contact', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    name: name,
+                    phone: phone,
+                    email: email,
+                    query_type: queryType,
+                    subject: subject,
+                    message: message
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                contactForm.classList.add('hidden');
+                formSuccess.classList.remove('hidden');
+            })
+            .catch(error => {
+                showError('फॉर्म सबमिट करताना त्रुटी आली. कृपया पुन्हा प्रयत्न करा. / Error submitting form. Please try again.');
+            })
+            .finally(() => {
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = `
+                    <i data-lucide="send" class="w-5 h-5"></i>
+                    <span>चौकशी पाठवा / Submit Query</span>
+                `;
+                lucide.createIcons();
+            });
+            */
+        });
+
+        function showError(message) {
+            errorText.textContent = message;
+            formError.classList.remove('hidden');
+        }
+
+        function resetForm() {
+            contactForm.reset();
+            contactForm.classList.remove('hidden');
+            formSuccess.classList.add('hidden');
+            formError.classList.add('hidden');
+        }
+    </script>
+</body>
+</html>
