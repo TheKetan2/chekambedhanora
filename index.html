@@ -42,7 +42,12 @@
         }
     </script>
     
+    
     <style>
+        /* Language Toggle Classes */
+        html[lang="mr"] .lang-en { display: none !important; }
+        html[lang="en"] .lang-mr { display: none !important; }
+
         /* Base Styles */
         html {
             scroll-behavior: smooth;
@@ -144,34 +149,42 @@
                         <i data-lucide="landmark" class="w-5 h-5 text-white"></i>
                     </div>
                     <div class="hidden sm:block">
-                        <p class="text-sm font-semibold text-primary-base">ग्रामपंचायत चेक आंबेधानोरा</p>
-                        <p class="text-xs text-slate-500">Gram Panchayat Chek Ambedhanora</p>
+                        <p class="text-sm font-semibold text-primary-base"><span class="lang-mr">ग्रामपंचायत चेक आंबेधानोरा</span><span class="lang-en">Gram Panchayat Chek Ambedhanora</span></p>
+                        
                     </div>
                 </div>
 
                 <!-- Desktop Navigation -->
                 <div class="hidden md:flex items-center gap-1">
                     <a href="#home" class="nav-link px-3 py-2 text-sm font-medium rounded-lg transition-colors duration-200 text-slate-600 hover:text-primary-base hover:bg-slate-50" data-section="home">
-                        <span class="hidden lg:inline">मुख्यपृष्ठ / </span>Home
+                        <span class="lang-mr">मुख्यपृष्ठ</span><span class="lang-en">Home</span>
                     </a>
                     <a href="#about" class="nav-link px-3 py-2 text-sm font-medium rounded-lg transition-colors duration-200 text-slate-600 hover:text-primary-base hover:bg-slate-50" data-section="about">
-                        <span class="hidden lg:inline">माहिती / </span>About
+                        <span class="lang-mr">माहिती</span><span class="lang-en">About</span>
                     </a>
                     <a href="#members" class="nav-link px-3 py-2 text-sm font-medium rounded-lg transition-colors duration-200 text-slate-600 hover:text-primary-base hover:bg-slate-50" data-section="members">
-                        <span class="hidden lg:inline">सदस्य / </span>Members
+                        <span class="lang-mr">सदस्य</span><span class="lang-en">Members</span>
                     </a>
                     <a href="#gallery" class="nav-link px-3 py-2 text-sm font-medium rounded-lg transition-colors duration-200 text-slate-600 hover:text-primary-base hover:bg-slate-50" data-section="gallery">
-                        <span class="hidden lg:inline">गॅलरी / </span>Gallery
+                        <span class="lang-mr">गॅलरी</span><span class="lang-en">Gallery</span>
                     </a>
                     <a href="#info" class="nav-link px-3 py-2 text-sm font-medium rounded-lg transition-colors duration-200 text-slate-600 hover:text-primary-base hover:bg-slate-50" data-section="info">
-                        <span class="hidden lg:inline">योजना / </span>Schemes
+                        <span class="lang-mr">योजना</span><span class="lang-en">Schemes</span>
                     </a>
                     <a href="#contact-form" class="nav-link px-3 py-2 text-sm font-medium rounded-lg transition-colors duration-200 text-slate-600 hover:text-primary-base hover:bg-slate-50" data-section="contact-form">
-                        <span class="hidden lg:inline">चौकशी / </span>Query
+                        <span class="lang-mr">चौकशी</span><span class="lang-en">Query</span>
                     </a>
                     <a href="#contact" class="nav-link px-3 py-2 text-sm font-medium rounded-lg transition-colors duration-200 text-slate-600 hover:text-primary-base hover:bg-slate-50" data-section="contact">
-                        <span class="hidden lg:inline">संपर्क / </span>Contact
+                        <span class="lang-mr">संपर्क</span><span class="lang-en">Contact</span>
                     </a>
+                </div>
+
+                <!-- Language Toggle Button -->
+                <div class="flex items-center gap-2 mr-2 md:mr-0 md:ml-4 flex-shrink-0">
+                    <button id="lang-toggle-btn" class="flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-100 hover:bg-slate-200 transition-colors border border-slate-200" aria-label="Toggle Language">
+                        <i data-lucide="languages" class="w-4 h-4 text-primary-base"></i>
+                        <span class="text-sm font-semibold text-primary-base" id="lang-toggle-text">EN</span>
+                    </button>
                 </div>
 
                 <!-- Mobile Menu Button -->
@@ -186,31 +199,31 @@
                 <div class="flex flex-col gap-1">
                     <a href="#home" class="mobile-nav-link flex items-center gap-3 px-4 py-3 text-left rounded-lg transition-colors text-slate-600 hover:bg-slate-50" data-section="home">
                         <i data-lucide="home" class="w-5 h-5"></i>
-                        <span class="font-medium">मुख्यपृष्ठ / Home</span>
+                        <span class="font-medium"><span class="lang-mr">मुख्यपृष्ठ</span><span class="lang-en">Home</span></span>
                     </a>
                     <a href="#about" class="mobile-nav-link flex items-center gap-3 px-4 py-3 text-left rounded-lg transition-colors text-slate-600 hover:bg-slate-50" data-section="about">
                         <i data-lucide="info" class="w-5 h-5"></i>
-                        <span class="font-medium">माहिती / About</span>
+                        <span class="font-medium"><span class="lang-mr">माहिती</span><span class="lang-en">About</span></span>
                     </a>
                     <a href="#members" class="mobile-nav-link flex items-center gap-3 px-4 py-3 text-left rounded-lg transition-colors text-slate-600 hover:bg-slate-50" data-section="members">
                         <i data-lucide="users" class="w-5 h-5"></i>
-                        <span class="font-medium">सदस्य / Members</span>
+                        <span class="font-medium"><span class="lang-mr">सदस्य</span><span class="lang-en">Members</span></span>
                     </a>
                     <a href="#gallery" class="mobile-nav-link flex items-center gap-3 px-4 py-3 text-left rounded-lg transition-colors text-slate-600 hover:bg-slate-50" data-section="gallery">
                         <i data-lucide="image" class="w-5 h-5"></i>
-                        <span class="font-medium">गॅलरी / Gallery</span>
+                        <span class="font-medium"><span class="lang-mr">गॅलरी</span><span class="lang-en">Gallery</span></span>
                     </a>
                     <a href="#info" class="mobile-nav-link flex items-center gap-3 px-4 py-3 text-left rounded-lg transition-colors text-slate-600 hover:bg-slate-50" data-section="info">
                         <i data-lucide="file-text" class="w-5 h-5"></i>
-                        <span class="font-medium">योजना / Schemes</span>
+                        <span class="font-medium"><span class="lang-mr">योजना</span><span class="lang-en">Schemes</span></span>
                     </a>
                     <a href="#contact-form" class="mobile-nav-link flex items-center gap-3 px-4 py-3 text-left rounded-lg transition-colors text-slate-600 hover:bg-slate-50" data-section="contact-form">
                         <i data-lucide="message-square" class="w-5 h-5"></i>
-                        <span class="font-medium">चौकशी / Query</span>
+                        <span class="font-medium"><span class="lang-mr">चौकशी</span><span class="lang-en">Query</span></span>
                     </a>
                     <a href="#contact" class="mobile-nav-link flex items-center gap-3 px-4 py-3 text-left rounded-lg transition-colors text-slate-600 hover:bg-slate-50" data-section="contact">
                         <i data-lucide="phone" class="w-5 h-5"></i>
-                        <span class="font-medium">संपर्क / Contact</span>
+                        <span class="font-medium"><span class="lang-mr">संपर्क</span><span class="lang-en">Contact</span></span>
                     </a>
                 </div>
             </div>
@@ -236,28 +249,27 @@
                 
                 <!-- CUSTOMIZE: Gram Panchayat Name -->
                 <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-4 tracking-tight">
-                    ग्रामपंचायत चेक आंबेधानोरा
+                    <span class="lang-mr">ग्रामपंचायत चेक आंबेधानोरा</span><span class="lang-en">Gram Panchayat Chek Ambedhanora</span>
                 </h1>
                 <h2 class="text-2xl sm:text-3xl lg:text-4xl font-semibold text-white/90 mb-6">
-                    Grampanchayat Chek Ambedhanora 
-                </h2>
+                    
                 
                 <!-- CUSTOMIZE: Village & District -->
                 <div class="flex items-center justify-center gap-2 text-white/80 mb-4">
                     <i data-lucide="map-pin" class="w-5 h-5"></i>
                     <p class="text-lg sm:text-xl">
-                        पंचायत समिति पोंभुर्णा , जिल्हा चंद्रपूर  | Panchayat Samiti Pombhurna, District Chandrapur    
+                        <span class="lang-mr">पंचायत समिती पोंभुर्णा, जिल्हा चंद्रपूर</span><span class="lang-en">Panchayat Samiti Pombhurna, District Chandrapur</span>    
                     </p>
                 </div>
 
                 <!-- CUSTOMIZE: Tagline -->
                 <p class="text-lg sm:text-xl text-white/70 italic">
-                    "स्वच्छ गाव, समृद्ध गाव" | "Clean Village, Prosperous Village"
+                    <span class="lang-mr">"स्वच्छ गाव, समृद्ध गाव"</span><span class="lang-en">"Clean Village, Prosperous Village"</span>
                 </p>
 
                 <div class="mt-10">
                     <a href="#about" class="inline-flex items-center justify-center bg-white text-primary-base hover:bg-white/90 px-8 py-4 text-lg font-semibold rounded-lg shadow-lg transition-colors">
-                        अधिक जाणून घ्या / Learn More
+                        <span class="lang-mr">अधिक जाणून घ्या</span><span class="lang-en">Learn More</span>
                     </a>
                 </div>
             </div>
@@ -267,9 +279,9 @@
         <section id="about" class="py-16 md:py-24 lg:py-32 bg-slate-50">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center mb-12 md:mb-16">
-                    <p class="text-sm uppercase tracking-wider font-semibold text-secondary-base mb-2">माहिती / About</p>
+                    <p class="text-sm uppercase tracking-wider font-semibold text-secondary-base mb-2"><span class="lang-mr">माहिती</span><span class="lang-en">About</span></p>
                     <h2 class="text-2xl sm:text-3xl lg:text-4xl font-semibold text-slate-900 tracking-tight">
-                        गावाची ओळख | Village Overview
+                        <span class="lang-mr">गावाची ओळख</span><span class="lang-en">Village Overview</span>
                     </h2>
                 </div>
 
@@ -281,7 +293,7 @@
                             <i data-lucide="users" class="w-7 h-7"></i>
                         </div>
                         <p class="text-3xl sm:text-4xl font-bold text-primary-base mb-2">1142</p>
-                        <p class="text-base text-slate-600 font-medium">लोकसंख्या / Population</p>
+                        <p class="text-base text-slate-600 font-medium"><span class="lang-mr">लोकसंख्या</span><span class="lang-en">Population</span></p>
                     </div>
 
                     <!-- Area Card -->
@@ -289,8 +301,8 @@
                         <div class="w-14 h-14 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center mx-auto mb-4">
                             <i data-lucide="map-pin" class="w-7 h-7"></i>
                         </div>
-                        <p class="text-3xl sm:text-4xl font-bold text-primary-base mb-2">638 Hector/R</p>
-                        <p class="text-base text-slate-600 font-medium">क्षेत्रफळ / Area</p>
+                        <p class="text-3xl sm:text-4xl font-bold text-primary-base mb-2">6.38 km²</p>
+                        <p class="text-base text-slate-600 font-medium"><span class="lang-mr">क्षेत्रफळ</span><span class="lang-en">Area</span></p>
                     </div>
 
                     <!-- Households Card -->
@@ -299,7 +311,7 @@
                             <i data-lucide="home" class="w-7 h-7"></i>
                         </div>
                         <p class="text-3xl sm:text-4xl font-bold text-primary-base mb-2">298</p>
-                        <p class="text-base text-slate-600 font-medium">कुटुंबे / Households</p>
+                        <p class="text-base text-slate-600 font-medium"><span class="lang-mr">कुटुंबे</span><span class="lang-en">Households</span></p>
                     </div>
 
                     <!-- Contact Card -->
@@ -308,7 +320,7 @@
                             <i data-lucide="phone" class="w-7 h-7"></i>
                         </div>
                         <p class="text-3xl sm:text-4xl font-bold text-primary-base mb-2">9763076399</p>
-                        <p class="text-base text-slate-600 font-medium">संपर्क / Contact</p>
+                        <p class="text-base text-slate-600 font-medium"><span class="lang-mr">संपर्क</span><span class="lang-en">Contact</span></p>
                     </div>
                 </div>
             </div>
@@ -318,9 +330,9 @@
         <section id="members" class="py-16 md:py-24 lg:py-32 bg-white">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center mb-12 md:mb-16">
-                    <p class="text-sm uppercase tracking-wider font-semibold text-secondary-base mb-2">सदस्य / Members</p>
+                    <p class="text-sm uppercase tracking-wider font-semibold text-secondary-base mb-2"><span class="lang-mr">सदस्य</span><span class="lang-en">Members</span></p>
                     <h2 class="text-2xl sm:text-3xl lg:text-4xl font-semibold text-slate-900 tracking-tight">
-                        ग्रामपंचायत सदस्य | Panchayat Members
+                        <span class="lang-mr">ग्रामपंचायत सदस्य</span><span class="lang-en">Panchayat Members</span>
                     </h2>
                 </div>
 
@@ -332,9 +344,9 @@
                             <img src="./assets/prashasak.jpg" alt="Sarpanch" class="w-full h-full object-cover" loading="lazy">
                         </div>
                         <div class="p-4 text-center">
-                            <h3 class="text-lg font-semibold text-slate-900 mb-1">सौ निरंजना विकास मडावी</h3>
-                            <p class="text-sm text-slate-500 mb-2">Sau Niranjana Vikas Madavi</p>
-                            <span class="inline-block bg-secondary-base text-white text-xs px-3 py-1 rounded-full font-medium">प्रशासाक  / Administrator</span>
+                            <h3 class="text-lg font-semibold text-slate-900 mb-1"><span class="lang-mr">सौ निरंजना विकास मडावी</span><span class="lang-en">Sau Niranjana Vikas Madavi</span></h3>
+                            
+                            <span class="inline-block bg-secondary-base text-white text-xs px-3 py-1 rounded-full font-medium"><span class="lang-mr">प्रशासक</span><span class="lang-en">Administrator</span></span>
                         </div>
                     </div>
 
@@ -344,9 +356,9 @@
                             <img src="./assets/gpo.jpg" alt="Deputy Sarpanch" class="w-full h-full object-cover" loading="lazy">
                         </div>
                         <div class="p-4 text-center">
-                            <h3 class="text-lg font-semibold text-slate-900 mb-1">श्री राजेश तुरे </h3>
-                            <p class="text-sm text-slate-500 mb-2">Shree Rajesh Ture</p>
-                            <span class="inline-block bg-secondary-base text-white text-xs px-3 py-1 rounded-full font-medium">ग्रामपंचायत अधिकारी / Grampanchayat Officer
+                            <h3 class="text-lg font-semibold text-slate-900 mb-1"><span class="lang-mr">श्री राजेश तुरे</span><span class="lang-en">Shree Rajesh Ture</span></h3>
+                            
+                            <span class="inline-block bg-secondary-base text-white text-xs px-3 py-1 rounded-full font-medium"><span class="lang-mr">ग्रामविकास अधिकारी</span><span class="lang-en">Gramvikas Officer</span>
                             </span>
                         </div>
                     </div>
@@ -430,9 +442,9 @@
         <section id="gallery" class="py-16 md:py-24 lg:py-32 bg-slate-50">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center mb-12 md:mb-16">
-                    <p class="text-sm uppercase tracking-wider font-semibold text-secondary-base mb-2">गॅलरी / Gallery</p>
+                    <p class="text-sm uppercase tracking-wider font-semibold text-secondary-base mb-2"><span class="lang-mr">गॅलरी</span><span class="lang-en">Gallery</span></p>
                     <h2 class="text-2xl sm:text-3xl lg:text-4xl font-semibold text-slate-900 tracking-tight">
-                        गावाची छायाचित्रे | Village Photos
+                        <span class="lang-mr">गावाची छायाचित्रे</span><span class="lang-en">Village Photos</span>
                     </h2>
                 </div>
 
@@ -441,52 +453,52 @@
                     <div class="gallery-image-container relative rounded-xl overflow-hidden group aspect-[4/3]">
                         <img src="./assets/gppic_three.jpeg" alt="Village View" class="w-full h-full object-cover" loading="lazy">
                         <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent p-4">
-                            <p class="text-white text-sm font-medium"> ग्रामपंचायत चेक आंबेधानोरा / Grampanchayat Chek Ambedhanora</p>
+                            <p class="text-white text-sm font-medium"> <span class="lang-mr">ग्रामपंचायत चेक आंबेधानोरा</span><span class="lang-en">Grampanchayat Chek Ambedhanora</span></p>
                         </div>
                     </div>
 
                     <div class="gallery-image-container relative rounded-xl overflow-hidden group aspect-[4/3]">
                         <img src="./assets/gym.jpeg" alt="Agricultural Work" class="w-full h-full object-cover" loading="lazy">
                         <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent p-4">
-                            <p class="text-white text-sm font-medium">व्यायाम शाळा  / Gym</p>
+                            <p class="text-white text-sm font-medium"><span class="lang-mr">व्यायाम शाळा</span><span class="lang-en">Gym</span></p>
                         </div>
                     </div>
 
                     <div class="gallery-image-container relative rounded-xl overflow-hidden group aspect-[4/3]">
                         <img src="./assets/library_ceo_sir.jpeg" alt="Rural Life" class="w-full h-full object-cover" loading="lazy">
                         <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent p-4">
-                            <p class="text-white text-sm font-medium">अभ्यासिका / Library </p>
+                            <p class="text-white text-sm font-medium"><span class="lang-mr">अभ्यासिका</span><span class="lang-en">Library</span></p>
                         </div>
                     </div>
 
                     <div class="gallery-image-container relative rounded-xl overflow-hidden group aspect-[4/3]">
                         <img src="./assets/meeting.jpeg" alt="Villagers" class="w-full h-full object-cover" loading="lazy">
                         <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent p-4">
-                            <p class="text-white text-sm font-medium">सभा  / Meeting</p>
+                            <p class="text-white text-sm font-medium"><span class="lang-mr">सभा</span><span class="lang-en">Meeting</span></p>
                         </div>
                     </div>
                     <div class="gallery-image-container relative rounded-xl overflow-hidden group aspect-[4/3]">
                         <img src="./assets/smashan_bhumi.jpeg" alt="Villagers" class="w-full h-full object-cover" loading="lazy">
                         <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent p-4">
-                            <p class="text-white text-sm font-medium">स्मशानभूमी  / Smashanbhumi</p>
+                            <p class="text-white text-sm font-medium"><span class="lang-mr">स्मशानभूमी</span><span class="lang-en">Smashanbhumi</span></p>
                         </div>
                     </div>
                     <div class="gallery-image-container relative rounded-xl overflow-hidden group aspect-[4/3]">
                         <img src="./assets/trashsollection.jpeg" alt="Villagers" class="w-full h-full object-cover" loading="lazy">
                         <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent p-4">
-                            <p class="text-white text-sm font-medium">स्वच्छता अभियान   / Swachata Abhiyan</p>
+                            <p class="text-white text-sm font-medium"><span class="lang-mr">स्वच्छता अभियान</span><span class="lang-en">Swachata Abhiyan</span></p>
                         </div>
                     </div>
                     <div class="gallery-image-container relative rounded-xl overflow-hidden group aspect-[4/3]">
                         <img src="./assets/zaki_mauli.jpeg" alt="Villagers" class="w-full h-full object-cover" loading="lazy">
                         <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent p-4">
-                            <p class="text-white text-sm font-medium">माउली झाकी</p>
+                            <p class="text-white text-sm font-medium"><span class="lang-mr">माउली झाकी</span><span class="lang-en">Mauli Jhaki</span></p>
                         </div>
                     </div>
                     <div class="gallery-image-container relative rounded-xl overflow-hidden group aspect-[4/3]">
                         <img src="./assets/wakulkar_sir.jpeg" alt="Villagers" class="w-full h-full object-cover" loading="lazy">
                         <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent p-4">
-                            <p class="text-white text-sm font-medium">वरिष्ठ अधिकारी भेट</p>
+                            <p class="text-white text-sm font-medium"><span class="lang-mr">वरिष्ठ अधिकारी भेट</span><span class="lang-en">Senior Officer Visit</span></p>
                         </div>
                     </div>
                 </div>
@@ -497,9 +509,9 @@
         <section id="info" class="py-16 md:py-24 lg:py-32 bg-white">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center mb-12 md:mb-16">
-                    <p class="text-sm uppercase tracking-wider font-semibold text-secondary-base mb-2">योजना / Schemes</p>
+                    <p class="text-sm uppercase tracking-wider font-semibold text-secondary-base mb-2"><span class="lang-mr">योजना</span><span class="lang-en">Schemes</span></p>
                     <h2 class="text-2xl sm:text-3xl lg:text-4xl font-semibold text-slate-900 tracking-tight">
-                        सरकारी योजना व सूचना | Government Schemes & Notices
+                        <span class="lang-mr">सरकारी योजना व सूचना</span><span class="lang-en">Government Schemes & Notices</span>
                     </h2>
                 </div>
 
@@ -513,11 +525,11 @@
                             </div>
                             <div class="flex-1 min-w-0">
                                 <div class="flex items-center gap-2 mb-1 flex-wrap">
-                                    <h3 class="text-lg font-semibold text-slate-900">प्रधानमंत्री आवास योजना</h3>
-                                    <span class="bg-secondary-base text-white text-xs px-2 py-0.5 rounded-full">नवीन / New</span>
+                                    <h3 class="text-lg font-semibold text-slate-900"><span class="lang-mr">प्रधानमंत्री आवास योजना</span><span class="lang-en">Pradhan Mantri Awas Yojana</span></h3>
+                                    <span class="bg-secondary-base text-white text-xs px-2 py-0.5 rounded-full"><span class="lang-mr">नवीन</span><span class="lang-en">New</span></span>
                                 </div>
-                                <p class="text-sm text-slate-500 mb-1">Pradhan Mantri Awas Yojana</p>
-                                <p class="text-base text-slate-600">घरकुल योजनेसाठी अर्ज करा | Apply for housing scheme</p>
+                                
+                                <p class="text-base text-slate-600"><span class="lang-mr">घरकुल योजनेसाठी अर्ज करा</span><span class="lang-en">Apply for housing scheme</span></p>
                             </div>
                         </div>
                     </div>
@@ -530,11 +542,11 @@
                             </div>
                             <div class="flex-1 min-w-0">
                                 <div class="flex items-center gap-2 mb-1 flex-wrap">
-                                    <h3 class="text-lg font-semibold text-slate-900">स्वच्छ भारत मिशन</h3>
-                                    <span class="bg-secondary-base text-white text-xs px-2 py-0.5 rounded-full">नवीन / New</span>
+                                    <h3 class="text-lg font-semibold text-slate-900"><span class="lang-mr">स्वच्छ भारत मिशन</span><span class="lang-en">Swachh Bharat Mission</span></h3>
+                                    <span class="bg-secondary-base text-white text-xs px-2 py-0.5 rounded-full"><span class="lang-mr">नवीन</span><span class="lang-en">New</span></span>
                                 </div>
-                                <p class="text-sm text-slate-500 mb-1">Swachh Bharat Mission</p>
-                                <p class="text-base text-slate-600">शौचालय बांधकाम अनुदान | Toilet construction subsidy</p>
+                                
+                                <p class="text-base text-slate-600"><span class="lang-mr">शौचालय बांधकाम अनुदान</span><span class="lang-en">Toilet construction subsidy</span></p>
                             </div>
                         </div>
                     </div>
@@ -546,9 +558,9 @@
                                 <i data-lucide="file-text" class="w-6 h-6 text-secondary-base"></i>
                             </div>
                             <div class="flex-1 min-w-0">
-                                <h3 class="text-lg font-semibold text-slate-900 mb-1">कृषी सिंचन योजना</h3>
-                                <p class="text-sm text-slate-500 mb-1">Krishi Sinchan Yojana</p>
-                                <p class="text-base text-slate-600">सूक्ष्म सिंचन सुविधा | Micro irrigation facility</p>
+                                <h3 class="text-lg font-semibold text-slate-900 mb-1"><span class="lang-mr">कृषी सिंचन योजना</span><span class="lang-en">Krishi Sinchan Yojana</span></h3>
+                                
+                                <p class="text-base text-slate-600"><span class="lang-mr">सूक्ष्म सिंचन सुविधा</span><span class="lang-en">Micro irrigation facility</span></p>
                             </div>
                         </div>
                     </div>
@@ -560,9 +572,9 @@
                                 <i data-lucide="file-text" class="w-6 h-6 text-secondary-base"></i>
                             </div>
                             <div class="flex-1 min-w-0">
-                                <h3 class="text-lg font-semibold text-slate-900 mb-1">महात्मा गांधी रोजगार हमी</h3>
-                                <p class="text-sm text-slate-500 mb-1">MGNREGA</p>
-                                <p class="text-base text-slate-600">रोजगार नोंदणी सुरू | Employment registration open</p>
+                                <h3 class="text-lg font-semibold text-slate-900 mb-1"><span class="lang-mr">महात्मा गांधी रोजगार हमी</span><span class="lang-en">MGNREGA</span></h3>
+                                
+                                <p class="text-base text-slate-600"><span class="lang-mr">रोजगार नोंदणी सुरू</span><span class="lang-en">Employment registration open</span></p>
                             </div>
                         </div>
                     </div>
@@ -574,12 +586,12 @@
         <section id="contact-form" class="py-16 md:py-24 lg:py-32 bg-slate-50">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center mb-12 md:mb-16">
-                    <p class="text-sm uppercase tracking-wider font-semibold text-secondary-base mb-2">संपर्क करा / Contact Us</p>
+                    <p class="text-sm uppercase tracking-wider font-semibold text-secondary-base mb-2"><span class="lang-mr">संपर्क करा</span><span class="lang-en">Contact Us</span></p>
                     <h2 class="text-2xl sm:text-3xl lg:text-4xl font-semibold text-slate-900 tracking-tight">
-                        तुमची चौकशी पाठवा | Submit Your Query
+                        <span class="lang-mr">तुमची चौकशी पाठवा</span><span class="lang-en">Submit Your Query</span>
                     </h2>
                     <p class="mt-4 text-base md:text-lg text-slate-600 max-w-2xl mx-auto">
-                        ग्रामपंचायतशी संपर्क साधण्यासाठी खालील फॉर्म भरा | Fill the form below to contact the Gram Panchayat
+                        <span class="lang-mr">ग्रामपंचायतशी संपर्क साधण्यासाठी खालील फॉर्म भरा</span><span class="lang-en">Fill the form below to contact the Gram Panchayat</span>
                     </p>
                 </div>
 
@@ -590,13 +602,12 @@
                             <div class="w-16 h-16 rounded-full bg-emerald-100 flex items-center justify-center mx-auto mb-4">
                                 <i data-lucide="check-circle" class="w-8 h-8 text-emerald-600"></i>
                             </div>
-                            <h3 class="text-xl font-semibold text-slate-900 mb-2">धन्यवाद! / Thank You!</h3>
+                            <h3 class="text-xl font-semibold text-slate-900 mb-2"><span class="lang-mr">धन्यवाद!</span><span class="lang-en">Thank You!</span></h3>
                             <p class="text-slate-600 mb-6">
-                                तुमची चौकशी यशस्वीरित्या प्राप्त झाली. आम्ही लवकरच संपर्क साधू.<br>
-                                Your query has been submitted successfully. We will contact you soon.
+                                <span class="lang-mr">तुमची चौकशी यशस्वीरित्या प्राप्त झाली. आम्ही लवकरच संपर्क साधू.</span><span class="lang-en">Your query has been submitted successfully. We will contact you soon.</span>
                             </p>
                             <button onclick="resetForm()" class="inline-flex items-center justify-center bg-primary-base hover:bg-primary-hover text-white px-6 py-3 rounded-lg font-semibold transition-colors">
-                                नवीन चौकशी पाठवा / Submit Another Query
+                                <span class="lang-mr">नवीन चौकशी पाठवा</span><span class="lang-en">Submit Another Query</span>
                             </button>
                         </div>
 
@@ -612,20 +623,20 @@
                                 <!-- Name -->
                                 <div class="space-y-2">
                                     <label for="name" class="block text-sm font-medium text-slate-700">
-                                        नाव / Name <span class="text-red-500">*</span>
+                                        <span class="lang-mr">नाव</span><span class="lang-en">Name</span> <span class="text-red-500">*</span>
                                     </label>
                                     <input type="text" id="name" name="name" required
-                                        placeholder="तुमचे पूर्ण नाव / Your full name"
+                                        data-mr-placeholder="तुमचे पूर्ण नाव" data-en-placeholder="Your full name" placeholder="तुमचे पूर्ण नाव"
                                         class="w-full px-4 py-3 border border-slate-300 rounded-lg text-base transition-colors">
                                 </div>
 
                                 <!-- Phone -->
                                 <div class="space-y-2">
                                     <label for="phone" class="block text-sm font-medium text-slate-700">
-                                        फोन नंबर / Phone <span class="text-red-500">*</span>
+                                        <span class="lang-mr">फोन नंबर</span><span class="lang-en">Phone</span> <span class="text-red-500">*</span>
                                     </label>
                                     <input type="tel" id="phone" name="phone" required
-                                        placeholder="10 अंकी नंबर / 10-digit number"
+                                        data-mr-placeholder="१० अंकी नंबर" data-en-placeholder="10-digit number" placeholder="१० अंकी नंबर"
                                         class="w-full px-4 py-3 border border-slate-300 rounded-lg text-base transition-colors">
                                 </div>
                             </div>
@@ -634,7 +645,7 @@
                                 <!-- Email -->
                                 <div class="space-y-2">
                                     <label for="email" class="block text-sm font-medium text-slate-700">
-                                        ईमेल / Email <span class="text-slate-400">(ऐच्छिक / Optional)</span>
+                                        <span class="lang-mr">ईमेल</span><span class="lang-en">Email</span> <span class="text-slate-400"><span class="lang-mr">(ऐच्छिक)</span><span class="lang-en">(Optional)</span></span>
                                     </label>
                                     <input type="email" id="email" name="email"
                                         placeholder="example@email.com"
@@ -644,14 +655,14 @@
                                 <!-- Query Type -->
                                 <div class="space-y-2">
                                     <label for="query_type" class="block text-sm font-medium text-slate-700">
-                                        चौकशीचा प्रकार / Query Type
+                                        <span class="lang-mr">चौकशीचा प्रकार</span><span class="lang-en">Query Type</span>
                                     </label>
                                     <select id="query_type" name="query_type"
                                         class="w-full px-4 py-3 border border-slate-300 rounded-lg text-base transition-colors bg-white">
-                                        <option value="general">सामान्य चौकशी / General Inquiry</option>
-                                        <option value="scheme">योजना माहिती / Scheme Information</option>
-                                        <option value="complaint">तक्रार / Complaint</option>
-                                        <option value="suggestion">सूचना / Suggestion</option>
+                                        <option value="general" data-mr="सामान्य चौकशी" data-en="General Inquiry">सामान्य चौकशी</option>
+                                        <option value="scheme" data-mr="योजना माहिती" data-en="Scheme Information">योजना माहिती</option>
+                                        <option value="complaint" data-mr="तक्रार" data-en="Complaint">तक्रार</option>
+                                        <option value="suggestion" data-mr="सूचना" data-en="Suggestion">सूचना</option>
                                     </select>
                                 </div>
                             </div>
@@ -659,20 +670,20 @@
                             <!-- Subject -->
                             <div class="space-y-2">
                                 <label for="subject" class="block text-sm font-medium text-slate-700">
-                                    विषय / Subject <span class="text-red-500">*</span>
+                                    <span class="lang-mr">विषय</span><span class="lang-en">Subject</span> <span class="text-red-500">*</span>
                                 </label>
                                 <input type="text" id="subject" name="subject" required
-                                    placeholder="चौकशीचा विषय / Subject of your query"
+                                    data-mr-placeholder="चौकशीचा विषय" data-en-placeholder="Subject of your query" placeholder="चौकशीचा विषय"
                                     class="w-full px-4 py-3 border border-slate-300 rounded-lg text-base transition-colors">
                             </div>
 
                             <!-- Message -->
                             <div class="space-y-2">
                                 <label for="message" class="block text-sm font-medium text-slate-700">
-                                    संदेश / Message <span class="text-red-500">*</span>
+                                    <span class="lang-mr">संदेश</span><span class="lang-en">Message</span> <span class="text-red-500">*</span>
                                 </label>
                                 <textarea id="message" name="message" rows="5" required
-                                    placeholder="तुमची चौकशी तपशीलवार लिहा / Write your query in detail"
+                                    data-mr-placeholder="तुमची चौकशी तपशीलवार लिहा" data-en-placeholder="Write your query in detail" placeholder="तुमची चौकशी तपशीलवार लिहा"
                                     class="w-full px-4 py-3 border border-slate-300 rounded-lg text-base transition-colors resize-none"></textarea>
                             </div>
 
@@ -680,11 +691,11 @@
                             <button type="submit" id="submit-btn"
                                 class="w-full flex items-center justify-center gap-2 bg-primary-base hover:bg-primary-hover text-white py-4 px-6 rounded-lg text-lg font-semibold transition-colors">
                                 <i data-lucide="send" class="w-5 h-5"></i>
-                                <span>चौकशी पाठवा / Submit Query</span>
+                                <span><span class="lang-mr">चौकशी पाठवा</span><span class="lang-en">Submit Query</span></span>
                             </button>
 
                             <p class="text-xs text-slate-500 text-center">
-                                <span class="text-red-500">*</span> आवश्यक माहिती / Required fields
+                                <span class="text-red-500">*</span> <span class="lang-mr">आवश्यक माहिती</span><span class="lang-en">Required fields</span>
                             </p>
                         </form>
                     </div>
@@ -705,8 +716,8 @@
                         </div>
                         <div>
                             <!-- CUSTOMIZE: Gram Panchayat Name -->
-                            <h3 class="text-xl font-bold">ग्रामपंचायत आंबेधानोरा</h3>
-                            <p class="text-white/70 text-sm">Gram Panchayat Ambedhanora</p>
+                            <h3 class="text-xl font-bold"><span class="lang-mr">ग्रामपंचायत चेक आंबेधानोरा</span><span class="lang-en">Gram Panchayat Chek Ambedhanora</span></h3>
+                            
                         </div>
                     </div>
                     <p class="text-white/60 text-sm italic">"स्वच्छ गाव, समृद्ध गाव"</p>
@@ -716,16 +727,16 @@
                 <div>
                     <h4 class="text-lg font-semibold mb-4 flex items-center gap-2">
                         <i data-lucide="building-2" class="w-5 h-5"></i>
-                        पत्ता / Address
+                        <span class="lang-mr">पत्ता</span><span class="lang-en">Address</span>
                     </h4>
                     <!-- CUSTOMIZE: Address -->
-                    <p class="text-white/80 text-sm leading-relaxed mb-2">ग्रामपंचायत कार्यालय, चेक आंबेधानोरा, ता. पोंभुर्णा, जि. चंद्रपूर - 442905</p>
-                    <p class="text-white/60 text-sm leading-relaxed">Gram Panchayat Office, Chek Ambedhanora, Tal. Pombhurna, Dist. Chandrapur - 442905</p>
+                    <p class="text-white/80 text-sm leading-relaxed mb-2"><span class="lang-mr">ग्रामपंचायत कार्यालय, चेक आंबेधानोरा, ता. पोंभुर्णा, जि. चंद्रपूर - ४४२९०५</span><span class="lang-en">Gram Panchayat Office, Chek Ambedhanora, Tal. Pombhurna, Dist. Chandrapur - 442905</span></p>
+                    
                 </div>
 
                 <!-- Contact -->
                 <div>
-                    <h4 class="text-lg font-semibold mb-4">संपर्क / Contact</h4>
+                    <h4 class="text-lg font-semibold mb-4"><span class="lang-mr">संपर्क</span><span class="lang-en">Contact</span></h4>
                     <div class="space-y-3">
                         <!-- CUSTOMIZE: Phone -->
                         <a href="tel:02135-123456" class="flex items-center gap-3 text-white/80 hover:text-white transition-colors">
@@ -744,9 +755,7 @@
             <!-- Copyright -->
             <div class="mt-12 pt-8 border-t border-white/10 text-center">
                 <p class="text-white/50 text-sm">
-                    © <span id="year"></span> Gram Panchayat Chek Ambedhanora. सर्व हक्क राखीव / All Rights Reserved.<span><p class="text-white/50 text-sm">
-                    © <span id="year"></span> Gram Panchayat Chek Ambedhanora. सर्व हक्क राखीव / All Rights Reserved.<span> Developed by <a href="https://github.com/theketan2">Ketan D. Ramteke</span></a></span>
-                </p></span>
+                    © <span id="year"></span> Gram Panchayat Chek Ambedhanora. <span class="lang-mr">सर्व हक्क राखीव</span><span class="lang-en">All Rights Reserved.</span><span> Developed by <a href="https://github.com/theketan2">Ketan D. Ramteke</span></a></span>
                 </p>
             </div>
         </div>
@@ -754,6 +763,36 @@
 
     <!-- ==================== JAVASCRIPT ==================== -->
     <script>
+        
+        // Language Toggle
+        const langToggleBtn = document.getElementById('lang-toggle-btn');
+        const langToggleText = document.getElementById('lang-toggle-text');
+        const htmlElement = document.documentElement;
+
+        function updateDynamicContent(lang) {
+            // Update placeholders
+            document.querySelectorAll(`[data-${lang}-placeholder]`).forEach(el => {
+                el.placeholder = el.getAttribute(`data-${lang}-placeholder`);
+            });
+            // Update options
+            document.querySelectorAll(`option[data-${lang}]`).forEach(el => {
+                el.textContent = el.getAttribute(`data-${lang}`);
+            });
+        }
+
+        langToggleBtn.addEventListener('click', () => {
+            const currentLang = htmlElement.getAttribute('lang');
+            const newLang = currentLang === 'mr' ? 'en' : 'mr';
+            
+            htmlElement.setAttribute('lang', newLang);
+            langToggleText.textContent = newLang === 'mr' ? 'EN' : 'MR';
+            
+            updateDynamicContent(newLang);
+        });
+
+        // Initialize dynamic content on load
+        updateDynamicContent(htmlElement.getAttribute('lang') || 'mr');
+
         // Initialize Lucide Icons
         lucide.createIcons();
 
@@ -832,10 +871,13 @@
         const errorText = document.getElementById('error-text');
         const submitBtn = document.getElementById('submit-btn');
 
+        
         contactForm.addEventListener('submit', function(e) {
             e.preventDefault();
             
+            const lang = document.documentElement.lang;
             // Get form values
+
             const name = document.getElementById('name').value.trim();
             const phone = document.getElementById('phone').value.trim();
             const email = document.getElementById('email').value.trim();
@@ -845,23 +887,23 @@
 
             // Validation
             if (!name) {
-                showError('कृपया नाव प्रविष्ट करा / Please enter your name');
+                showError(lang === 'mr' ? 'कृपया नाव प्रविष्ट करा' : 'Please enter your name');
                 return;
             }
             if (!phone) {
-                showError('कृपया फोन नंबर प्रविष्ट करा / Please enter phone number');
+                showError(lang === 'mr' ? 'कृपया फोन नंबर प्रविष्ट करा' : 'Please enter phone number');
                 return;
             }
             if (!/^[0-9]{10}$/.test(phone.replace(/\s/g, ''))) {
-                showError('कृपया वैध 10 अंकी फोन नंबर प्रविष्ट करा / Please enter valid 10-digit phone number');
+                showError(lang === 'mr' ? 'कृपया वैध 10 अंकी फोन नंबर प्रविष्ट करा' : 'Please enter valid 10-digit phone number');
                 return;
             }
             if (!subject) {
-                showError('कृपया विषय प्रविष्ट करा / Please enter subject');
+                showError(lang === 'mr' ? 'कृपया विषय प्रविष्ट करा' : 'Please enter subject');
                 return;
             }
             if (!message) {
-                showError('कृपया संदेश प्रविष्ट करा / Please enter your message');
+                showError(lang === 'mr' ? 'कृपया संदेश प्रविष्ट करा' : 'Please enter your message');
                 return;
             }
 
@@ -875,7 +917,7 @@
                     <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
                     <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                 </svg>
-                <span>पाठवत आहे... / Submitting...</span>
+                <span class="lang-mr">पाठवत आहे...</span><span class="lang-en">Submitting...</span>
             `;
 
             // Simulate form submission (replace with actual API call)
@@ -889,7 +931,7 @@
                 submitBtn.disabled = false;
                 submitBtn.innerHTML = `
                     <i data-lucide="send" class="w-5 h-5"></i>
-                    <span>चौकशी पाठवा / Submit Query</span>
+                    <span><span class="lang-mr">चौकशी पाठवा</span><span class="lang-en">Submit Query</span></span>
                 `;
                 lucide.createIcons();
             }, 1500);
@@ -922,7 +964,7 @@
                 submitBtn.disabled = false;
                 submitBtn.innerHTML = `
                     <i data-lucide="send" class="w-5 h-5"></i>
-                    <span>चौकशी पाठवा / Submit Query</span>
+                    <span><span class="lang-mr">चौकशी पाठवा</span><span class="lang-en">Submit Query</span></span>
                 `;
                 lucide.createIcons();
             });
