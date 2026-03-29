@@ -2,38 +2,22 @@
 <html lang="mr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="ग्रामपंचायत अधिकृत संकेतस्थळ - Gram Panchayat Official Website">
-    <meta name="theme-color" content="#0A3161">
-    <meta name="color-scheme" content="light">
     <title>ग्रामपंचायत चेक आंबेधानोरा | Gram Panchayat Chek Ambedhanora</title>
     
-    <!-- DNS Prefetch for faster external resource loading -->
-    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
-    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
-    <link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
-    <link rel="dns-prefetch" href="https://unpkg.com">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- Preconnect to external domains -->
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://cdn.tailwindcss.com" crossorigin>
-    <link rel="preconnect" href="https://unpkg.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@400;500;600;700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
     
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
     
-    <!-- Google Fonts with display=swap for better performance -->
-    <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@400;500;600;700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-    <noscript>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Mukta:wght@400;500;600;700&family=Work+Sans:wght@400;500;600&display=swap">
-    </noscript>
-    
-    <!-- Tailwind CSS CDN - defer for faster initial load -->
-    <script src="https://cdn.tailwindcss.com?plugins=forms" defer></script>
-    
-    <!-- Lucide Icons CDN - load after page content -->
-    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" async></script>
-    
-    <!-- Tailwind Config - Inline critical styles -->
+    <!-- Tailwind Config -->
     <script>
         tailwind.config = {
             theme: {
@@ -57,12 +41,6 @@
             }
         }
     </script>
-    
-    <!-- Critical CSS for above-the-fold content -->
-    <style>
-        body { font-family: 'Work Sans', sans-serif; }
-        h1, h2, h3, h4, h5, h6 { font-family: 'Mukta', sans-serif; }
-    </style>
     
     <style>
         /* Base Styles */
@@ -244,8 +222,7 @@
         <!-- ==================== HERO SECTION ==================== -->
         <section id="home" class="relative min-h-[85vh] flex items-center justify-center">
             <!-- Background Image - CUSTOMIZE: Replace with your village image -->
-            <!-- Priority hint for hero image -->
-            <div class="absolute inset-0 bg-cover bg-center bg-no-repeat" style="background-image: url('./assets/gppic_one.jpeg');" role="img" aria-label="Gram Panchayat Chek Ambedhanora Village">
+            <div class="absolute inset-0 bg-cover bg-center bg-no-repeat" style="background-image: url('./assets/gppic_one.jpeg');">
                 <div class="absolute inset-0 hero-overlay"></div>
             </div>
 
@@ -253,33 +230,33 @@
             <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                 <div class="flex justify-center mb-6">
                     <div class="w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center border-2 border-white/30">
-                        <i data-lucide="landmark" class="w-10 h-10 sm:w-12 sm:h-12 text-white" aria-hidden="true"></i>
+                        <i data-lucide="landmark" class="w-10 h-10 sm:w-12 sm:h-12 text-white"></i>
                     </div>
                 </div>
                 
                 <!-- CUSTOMIZE: Gram Panchayat Name -->
-                <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 tracking-tight leading-tight">
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-4 tracking-tight">
                     ग्रामपंचायत चेक आंबेधानोरा
                 </h1>
-                <h2 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-white/90 mb-6">
+                <h2 class="text-2xl sm:text-3xl lg:text-4xl font-semibold text-white/90 mb-6">
                     Grampanchayat Chek Ambedhanora 
                 </h2>
                 
                 <!-- CUSTOMIZE: Village & District -->
-                <div class="flex items-center justify-center gap-2 text-white/80 mb-4 px-2">
-                    <i data-lucide="map-pin" class="w-5 h-5 flex-shrink-0" aria-hidden="true"></i>
-                    <p class="text-base sm:text-lg md:text-xl">
+                <div class="flex items-center justify-center gap-2 text-white/80 mb-4">
+                    <i data-lucide="map-pin" class="w-5 h-5"></i>
+                    <p class="text-lg sm:text-xl">
                         पंचायत समिति पोंभुर्णा , जिल्हा चंद्रपूर  | Panchayat Samiti Pombhurna, District Chandrapur    
                     </p>
                 </div>
 
                 <!-- CUSTOMIZE: Tagline -->
-                <p class="text-base sm:text-lg md:text-xl text-white/70 italic px-2">
+                <p class="text-lg sm:text-xl text-white/70 italic">
                     "स्वच्छ गाव, समृद्ध गाव" | "Clean Village, Prosperous Village"
                 </p>
 
-                <div class="mt-8 sm:mt-10">
-                    <a href="#about" class="inline-flex items-center justify-center bg-white text-primary-base hover:bg-white/90 px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold rounded-lg shadow-lg transition-all duration-200 min-h-[48px]">
+                <div class="mt-10">
+                    <a href="#about" class="inline-flex items-center justify-center bg-white text-primary-base hover:bg-white/90 px-8 py-4 text-lg font-semibold rounded-lg shadow-lg transition-colors">
                         अधिक जाणून घ्या / Learn More
                     </a>
                 </div>
@@ -300,38 +277,38 @@
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                     <!-- Population Card -->
                     <div class="bg-white border border-slate-200 rounded-xl shadow-sm card-hover p-6 md:p-8 text-center">
-                        <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-blue-50 text-blue-600 flex items-center justify-center mx-auto mb-4">
-                            <i data-lucide="users" class="w-6 h-6 sm:w-7 sm:h-7" aria-hidden="true"></i>
+                        <div class="w-14 h-14 rounded-full bg-blue-50 text-blue-600 flex items-center justify-center mx-auto mb-4">
+                            <i data-lucide="users" class="w-7 h-7"></i>
                         </div>
-                        <p class="text-2xl sm:text-3xl md:text-4xl font-bold text-primary-base mb-2">1142</p>
-                        <p class="text-sm sm:text-base text-slate-600 font-medium">लोकसंख्या / Population</p>
+                        <p class="text-3xl sm:text-4xl font-bold text-primary-base mb-2">1142</p>
+                        <p class="text-base text-slate-600 font-medium">लोकसंख्या / Population</p>
                     </div>
 
                     <!-- Area Card -->
                     <div class="bg-white border border-slate-200 rounded-xl shadow-sm card-hover p-6 md:p-8 text-center">
-                        <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center mx-auto mb-4">
-                            <i data-lucide="map-pin" class="w-6 h-6 sm:w-7 sm:h-7" aria-hidden="true"></i>
+                        <div class="w-14 h-14 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center mx-auto mb-4">
+                            <i data-lucide="map-pin" class="w-7 h-7"></i>
                         </div>
-                        <p class="text-2xl sm:text-3xl md:text-4xl font-bold text-primary-base mb-2">6.38 km²</p>
-                        <p class="text-sm sm:text-base text-slate-600 font-medium">क्षेत्रफळ / Area</p>
+                        <p class="text-3xl sm:text-4xl font-bold text-primary-base mb-2">6.38 km²</p>
+                        <p class="text-base text-slate-600 font-medium">क्षेत्रफळ / Area</p>
                     </div>
 
                     <!-- Households Card -->
                     <div class="bg-white border border-slate-200 rounded-xl shadow-sm card-hover p-6 md:p-8 text-center">
-                        <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-amber-50 text-amber-600 flex items-center justify-center mx-auto mb-4">
-                            <i data-lucide="home" class="w-6 h-6 sm:w-7 sm:h-7" aria-hidden="true"></i>
+                        <div class="w-14 h-14 rounded-full bg-amber-50 text-amber-600 flex items-center justify-center mx-auto mb-4">
+                            <i data-lucide="home" class="w-7 h-7"></i>
                         </div>
-                        <p class="text-2xl sm:text-3xl md:text-4xl font-bold text-primary-base mb-2">298</p>
-                        <p class="text-sm sm:text-base text-slate-600 font-medium">कुटुंबे / Households</p>
+                        <p class="text-3xl sm:text-4xl font-bold text-primary-base mb-2">298</p>
+                        <p class="text-base text-slate-600 font-medium">कुटुंबे / Households</p>
                     </div>
 
                     <!-- Contact Card -->
                     <div class="bg-white border border-slate-200 rounded-xl shadow-sm card-hover p-6 md:p-8 text-center">
-                        <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-purple-50 text-purple-600 flex items-center justify-center mx-auto mb-4">
-                            <i data-lucide="phone" class="w-6 h-6 sm:w-7 sm:h-7" aria-hidden="true"></i>
+                        <div class="w-14 h-14 rounded-full bg-purple-50 text-purple-600 flex items-center justify-center mx-auto mb-4">
+                            <i data-lucide="phone" class="w-7 h-7"></i>
                         </div>
-                        <p class="text-lg sm:text-2xl md:text-3xl font-bold text-primary-base mb-2 break-all">9763076399</p>
-                        <p class="text-sm sm:text-base text-slate-600 font-medium">संपर्क / Contact</p>
+                        <p class="text-3xl sm:text-4xl font-bold text-primary-base mb-2">9763076399</p>
+                        <p class="text-base text-slate-600 font-medium">संपर्क / Contact</p>
                     </div>
                 </div>
             </div>
@@ -462,52 +439,52 @@
                 <!-- CUSTOMIZE: Replace with your village images -->
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
                     <div class="gallery-image-container relative rounded-xl overflow-hidden group aspect-[4/3]">
-                        <img src="./assets/gppic_three.jpeg" alt="Village View" class="w-full h-full object-cover" loading="lazy" decoding="async" width="400" height="300">
+                        <img src="./assets/gppic_three.jpeg" alt="Village View" class="w-full h-full object-cover" loading="lazy">
                         <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent p-4">
                             <p class="text-white text-sm font-medium"> ग्रामपंचायत चेक आंबेधानोरा / Grampanchayat Chek Ambedhanora</p>
                         </div>
                     </div>
 
                     <div class="gallery-image-container relative rounded-xl overflow-hidden group aspect-[4/3]">
-                        <img src="./assets/gym.jpeg" alt="Agricultural Work" class="w-full h-full object-cover" loading="lazy" decoding="async" width="400" height="300">
+                        <img src="./assets/gym.jpeg" alt="Agricultural Work" class="w-full h-full object-cover" loading="lazy">
                         <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent p-4">
                             <p class="text-white text-sm font-medium">व्यायाम शाळा  / Gym</p>
                         </div>
                     </div>
 
                     <div class="gallery-image-container relative rounded-xl overflow-hidden group aspect-[4/3]">
-                        <img src="./assets/library_ceo_sir.jpeg" alt="Rural Life" class="w-full h-full object-cover" loading="lazy" decoding="async" width="400" height="300">
+                        <img src="./assets/library_ceo_sir.jpeg" alt="Rural Life" class="w-full h-full object-cover" loading="lazy">
                         <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent p-4">
                             <p class="text-white text-sm font-medium">अभ्यासिका / Library </p>
                         </div>
                     </div>
 
                     <div class="gallery-image-container relative rounded-xl overflow-hidden group aspect-[4/3]">
-                        <img src="./assets/meeting.jpeg" alt="Villagers" class="w-full h-full object-cover" loading="lazy" decoding="async" width="400" height="300">
+                        <img src="./assets/meeting.jpeg" alt="Villagers" class="w-full h-full object-cover" loading="lazy">
                         <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent p-4">
                             <p class="text-white text-sm font-medium">सभा  / Meeting</p>
                         </div>
                     </div>
                     <div class="gallery-image-container relative rounded-xl overflow-hidden group aspect-[4/3]">
-                        <img src="./assets/smashan_bhumi.jpeg" alt="Villagers" class="w-full h-full object-cover" loading="lazy" decoding="async" width="400" height="300">
+                        <img src="./assets/smashan_bhumi.jpeg" alt="Villagers" class="w-full h-full object-cover" loading="lazy">
                         <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent p-4">
                             <p class="text-white text-sm font-medium">स्मशानभूमी  / Smashanbhumi</p>
                         </div>
                     </div>
                     <div class="gallery-image-container relative rounded-xl overflow-hidden group aspect-[4/3]">
-                        <img src="./assets/trashsollection.jpeg" alt="Villagers" class="w-full h-full object-cover" loading="lazy" decoding="async" width="400" height="300">
+                        <img src="./assets/trashsollection.jpeg" alt="Villagers" class="w-full h-full object-cover" loading="lazy">
                         <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent p-4">
                             <p class="text-white text-sm font-medium">स्वच्छता अभियान   / Swachata Abhiyan</p>
                         </div>
                     </div>
                     <div class="gallery-image-container relative rounded-xl overflow-hidden group aspect-[4/3]">
-                        <img src="./assets/zaki_mauli.jpeg" alt="Villagers" class="w-full h-full object-cover" loading="lazy" decoding="async" width="400" height="300">
+                        <img src="./assets/zaki_mauli.jpeg" alt="Villagers" class="w-full h-full object-cover" loading="lazy">
                         <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent p-4">
                             <p class="text-white text-sm font-medium">माउली झाकी</p>
                         </div>
                     </div>
                     <div class="gallery-image-container relative rounded-xl overflow-hidden group aspect-[4/3]">
-                        <img src="./assets/wakulkar_sir.jpeg" alt="Villagers" class="w-full h-full object-cover" loading="lazy" decoding="async" width="400" height="300">
+                        <img src="./assets/wakulkar_sir.jpeg" alt="Villagers" class="w-full h-full object-cover" loading="lazy">
                         <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent p-4">
                             <p class="text-white text-sm font-medium">वरिष्ठ अधिकारी भेट</p>
                         </div>
@@ -775,12 +752,8 @@
 
     <!-- ==================== JAVASCRIPT ==================== -->
     <script>
-        // Initialize Lucide Icons after DOM is ready
-        if (document.readyState === 'loading') {
-            document.addEventListener('DOMContentLoaded', () => lucide.createIcons());
-        } else {
-            lucide.createIcons();
-        }
+        // Initialize Lucide Icons
+        lucide.createIcons();
 
         // Set current year in footer
         document.getElementById('year').textContent = new Date().getFullYear();
